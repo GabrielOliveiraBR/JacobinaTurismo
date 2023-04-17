@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Jacobina Turismo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script> 
+
+
+</head>
+<body>
+
+  <header>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-dark" id="headerNav">
+      <div class="container-fluid">
+        <a class="navbar-brand d-block d-lg-none" href="#">
+          <img src="img/logo.png" height="80" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active"  href="histo.html">História de Jacobina</a>
+            </li>
+            
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link mx-2 active" href="index.html">
+                <img src="img/logo.png" height="80px" />
+              </a>
+              <li class="nav-item">
+                <a class="nav-link mx-2 active"  href="sugestao.html">Sugestão</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  </header>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <section>
+    <body>
+
+      <section class="main-map">
+          <div id="map_canvas" ></div>
+      </section>
+
+          <script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=SUA KEY AQUI"></script>
+
+          <script>
+
+        $.getJSON('json/pontos.json', function(response) {
+            var dados = response;
+
+            var ani = (dados[0])
+            var mac = (dados[1])
+            var usi = (dados[2])
+            var cru = (dados[3])
+            var viu = (dados[4])
+            var bri = (dados[5])
+            var amo = (dados[6])
+            var top = (dados[7])
+            var bar = (dados[8])
+           
+
+            var mapOptions = {
+            center: new google.maps.LatLng(-11.186604, -40.511807),
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          const icon = {
+              url: "img/my-icon.png", // url
+              scaledSize: new google.maps.Size(20, 30), // scaled size
+              origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+          };
+          
+          var map = new google.maps.Map(document.getElementById("map_canvas"),
+              mapOptions);  //nova posição
+
+            console.log(mac.nome)
+            //Cachoeira do Aníbal
+            var ponto = new google.maps.LatLng(ani.latitude, ani.longitude);
+            var nome = ani.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto,//seta posição
+              map: map,//Objeto mapa
+              title: nome,
+              icon: icon
+            });
+
+            //Parque municipal da Macaqueira
+            var ponto2 = new google.maps.LatLng(mac.latitude, mac.longitude);
+            var nome2 = mac.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto2,//seta posição
+              map: map,//Objeto mapa
+              title: nome2,
+              icon: icon
+            });
+
+            //Antiga Usina Hidrelétrica de Jacobina
+            var ponto3 = new google.maps.LatLng(usi.latitude, usi.longitude);
+            var nome3 = usi.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto3,//seta posição
+              map: map,//Objeto mapa
+              title: nome3,
+              icon: icon
+            });
+            //Alto do Cruzeiro
+            var ponto9 = new google.maps.LatLng(cru.latitude, cru.longitude);
+            var nome9 = cru.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto9,//seta posição
+              map: map,//Objeto mapa
+              title: nome9,
+              icon: icon
+            });
+            //Cachoeira Da Viúva
+            var ponto4 = new google.maps.LatLng(viu.latitude, viu.longitude);
+            var nome4 = viu.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto4,//seta posição
+              map: map,//Objeto mapa
+              title: nome4,
+              icon: icon
+            });
+            //Cachoeira do Brito
+            var ponto5 = new google.maps.LatLng(bri.latitude, bri.longitude);
+            var nome5 = bri.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto5,//seta posição
+              map: map,//Objeto mapa
+              title: nome5,
+              icon: icon
+            });
+            //Cachoeira dos Amores/ 
+            var ponto6 = new google.maps.LatLng(amo.latitude, amo.longitude);
+            var nome6 = amo.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto6,//seta posição
+              map: map,//Objeto mapa
+              title: nome6,
+              icon: icon
+            });
+            //Topinho do mundo
+            var ponto8 = new google.maps.LatLng(top.latitude, top.longitude);
+            var nome8 = top.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto8,//seta posição
+              map: map,//Objeto mapa
+              title: nome8,
+              icon: icon
+            });
+            //Barragem travessa Santa Terezinha
+            var ponto10 = new google.maps.LatLng(bar.latitude, bar.longitude);
+            var nome10 = bar.nome
+
+            var marker = new google.maps.Marker({
+              position: ponto10,//seta posição
+              map: map,//Objeto mapa
+              title: nome10,
+              icon: icon
+            });            
+        });
+
+          </script>
+
+
+  </section>
+
+
+  <script src="script/script.js"></script>
+
+    <div class="central">
+      <section class="card-deck">
+        <article class="card">
+          <img class="card-img-top" src="./img/1.jpg" alt="Alto do Cruzeiro">
+          <div class="card-body">
+            <h5 class="card-title">Alto do Cruzeiro</h5>
+            <p class="card-text">A escadaria do cruzeiro se tornou um dos maiores cartões postais de Jacobina, foi construída no ano de 1981, tendo 365 degraus e 100m de altura. Todos os anos milhares de pessoas passam por aqui.</p>
+            <p class="card-text"><small class="text-muted">Fonte: Pontos Turísticos de Jacobina - BA</small></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img-top" src="./img/2.jpg" alt="Antiga Usina Hidrelétrica de Jacobina">
+          <div class="card-body">
+            <h5 class="card-title">Antiga Usina Hidrelétrica de Jacobina</h5>
+            <p class="card-text">A usina está localizada no interior do Parque da Macaqueira. Ela gerava uma quantidade pequena de energia  que era repensável por gerar a energia das principais ruas e estabelecimentos. </p>
+            <p class="card-text"><small class="text-muted">Fonte: Parque da Macaqueira</small></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img-top" src="./img/3.jpg" alt="Cachoeira da Viúva">
+          <div class="card-body">
+            <h5 class="card-title">Cachoeira da Viúva</h5>
+            <p class="card-text">Localizada na estrada do Brito, em torno de 3.3Km do centro da cidade, com uma trilha um pouco fechada e de difícil acesso. Porém, a cachoeira e a trilha são muito bonitas.</p>
+                        <p class="card-text"><small class="text-muted">Fonte: Relato de moradores locais</small></p>
+          </div>
+        </article>
+
+    </section>
+
+
+    <section class="card-deck">
+      <article class="card">
+        <img class="card-img-top" src="./img/4.jpg" alt="Cachoeira do Aníbal">
+        <div class="card-body">
+          <h5 class="card-title">Cachoeira do Aníbal</h5>
+          <p class="card-text">Cachoeira pequena, bela trilha, local muito lindo e romântico, boa opção para turismo e pra quem gosta de aventuras, o carro de estaciona bem próximo em um restaurante e segue à pé, em uma boa trilha com vista espetacular.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Tripadvisor</small></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img-top" src="./img/5.jpg" alt="Cachoeira do Brito">
+        <div class="card-body">
+          <h5 class="card-title">Cachoeira do Brito</h5>
+          <p class="card-text">Cachoeira bonita, fica localizada no vale do Brito, em torno de 3km do centro da cidade. Tendo uma trilha aberta e de fácil tendo o cuidado da associação comunitária da grota do Brito.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Relato de moradores locais</small></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img-top" src="./img/6.jpg" alt="Pico do Jaraguá">
+        <div class="card-body">
+          <h5 class="card-title">Pico do Jaraguá</h5>
+          <p class="card-text">Com seus quase 1000 m de altitude (no topo), o Pico do Jaraguá é um dos picos mais altos da região de Jacobina. Devido a sua fácil localização e a subida acessível a todas as pessoas, o Pico é bem frequentado pelos aventureiros, pois oferece uma vista bela e panorâmica da cidade de Jacobina.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Pontos Turísticos de Jacobina - BA</small></p>
+        </div>
+    </section>
+
+    <section class="card-deck">
+      </article>
+      <article class="card">
+        <img class="card-img-top" src="./img/7.jpg" alt="Parque municipal da Macaqueira">
+        <div class="card-body">
+          <h5 class="card-title">Parque Municipal da Macaqueira</h5>
+          <p class="card-text">Possui uma grande importância natural, faz parte da história da cidade e da maioria de seus moradores. Marco de desenvolvimento, o parque  é lembrada por ter abrigado os primeiros sistemas de geração de energia elétrica e água tratada para a sede do município de Jacobina.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Ecodebate</small></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img-top" src="./img/8.jpg" alt="Antiga Usina Hidrelétrica de Jacobina">
+        <div class="card-body">
+          <h5 class="card-title">Topinho do mundo </h5>
+          <p class="card-text">Um dos pontos mais altos da cidade tendo uma ótima trilha de acesso espaçosa e confortável. Possuindo uma linda vista de boa parte da cidade.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Relato de moradores locais</small></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img-top" src="./img/9.jpg" alt="Toca Jacó e Bina">
+        <div class="card-body">
+          <h5 class="card-title">Toca Jacó e Bina</h5>
+          <p class="card-text">Em torno de 1,5km do centro da cidade representa uma historia local sobre dois índios que se amavam chamados de Jaco e Bina. Em homenagem a esses dois e seu amor a cidade teria sido batizada de Jacobina.</p>
+          <p class="card-text"><small class="text-muted">Fonte: Relato de moradores locais</small></p>
+        </div>
+      </article>
+
+  </section>
+    </div>
+
+    
+
+
+
+    <footer class=" text-center text-center text-white" style="background-color: #141414;">
+      <div class="container p-4">
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-floating m-1" href="https://www.facebook.com/gabriel.bareto.94/?locale=pt_BR" role="button"
+            ><img class="icon" src="./img/icon/facebook.png" alt="facebook"></a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-floating m-1" href="https://twitter.com/Gabriel_rmoa" role="button"
+            ><img class="icon" src="./img/icon/twitter.png" alt="Twitter"></a>
+    
+          <!-- Google -->
+          <a class="btn btn-floating m-1" href="mailto:barretog761@gmail.com" role="button" 
+            ><img class="icon" src="./img/icon/google.png" alt="Google"></a>
+    
+          <!-- Instagram -->
+          <a class="btn btn-floating m-1" href="https://www.instagram.com/gabrielloliveira02/" role="button"
+            ><img class="icon" src="./img/icon/instagram.png" alt="Instagram"></a>
+          </a>
+    
+          <!-- Linkedin -->
+          <a class="btn btn-floating m-1" href="https://www.linkedin.com/in/gabriel-oliveira-99b546258/" role="button"
+            ><img class="icon" src="./img/icon/linkedin.png" alt="Linkedin"></a>
+    
+          <!-- Github -->
+          <a class="btn btn-floating m-1" href="https://github.com/GabrielOliveiraBR" role="button"
+            ><img class="icon" src="./img/icon/github.png" alt="Github"></a>
+
+        <section class="mb-4">
+          <p>
+          </br>
+            Esse site é um exemplo para utilizar meus conhecimentos na área de Web. <br>
+            Nesse site foram utilizados as seguintes teorias: API, HTML, CSS , Javascript, Bootstrap, Jquerry e JSON
+          </p>
+        </section>
+        <div class="row">
+
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+           
+    
+          </div>
+        </div>
+      </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://github.com/GabrielOliveiraBR">Gabriel Oliveira</a>
+    </div>    
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

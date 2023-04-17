@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Jacobina Turismo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script> 
+
+
+</head>
+<body>
+
+  <header>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-dark" id="headerNav">
+      <div class="container-fluid">
+        <a class="navbar-brand d-block d-lg-none" href="#">
+          <img src="img/logo.png" height="80" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active"  href="histo.html">História de Jacobina</a>
+            </li>
+            
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link mx-2 active" href="index.html">
+                <img src="img/logo.png" height="80px" />
+              </a>
+              <li class="nav-item">
+                <a class="nav-link mx-2 active"  href="sugestao.html">Sugestão</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<section class="historia">
+  <br>
+    <h1>História Da Cidade</h1>
+        
+        <p>Em princípios do século XVII, a corrida de bandeirantes e portugueses às minas de ouro descobertas 
+            em terras do atual município (ao que se sabe, por Roberto Dias) <br> foi a origem da corrente inicial 
+            do devassamento e povoação de Jacobina. A notícia de exploração de minérios fluir ao lugar numerosos 
+            contingentes humanos,<br> vindo de recantos longínquos, para aí se aglomerarem, sedentos de ouro fácil. 
+            Um dos primeiros a chegar foi Belchior Dias Moreia. Depois dele, por volta de 1652, <br>ali chegou Antônio 
+            de Brito Correia e depois os Guedes de Brito, estes acompanhados de muitos colonos e escravos.</p>
+        <p>Iniciaram-se, também, por essa época, as atividades suplementares de criação de gado e de culturas 
+            agrícolas essenciais. À proporção que novas levas de braço<br> chegavam para o garimpo, o arruado a margem 
+            do Itapicuru Mirim ia crescendo rapidamente, reunindo população inicial bastante densa e heterogênea.</p>
+        <p>A exploração aurífera prosseguia fora do controle oficial e em escala tão crescente que o governo da
+             metrópole, para melhor garantir a arrecadação do seu<br> dízimo, por Provisão do Conselho Ultramarino
+            de 13 de maio de 1726, determinou que o Governador da Província criasse duas casas de fundição, sendo<br>
+            que uma devia instalar-se em Jacobina em 5 de janeiro de 1727 e outra em Rio de Contas. O resultado
+            foi surpreendente e auspicioso, arrecadando-se, na mina<br> de Jacobina, em apenas dois anos, cerca de
+            3.841 libras de ouro, não obstante a difícil fiscalização sobre atividade de tal natureza.</p>
+        <p>Entrementes o progresso opulento que emanava das minas adquiria forma e a Coroa promoveu o barulhento 
+            arraial à categoria de vila mediante Carta Régia de <br>D. João V, datada de 5 de agosto de 1720. Com o 
+            nome de Vila Santo Antônio de Jacobina a nova povoação integrava as freguesias de Santo Antônio de Pambu<br> 
+            e Santo Antônio do Urubu. O lugar escolhido para ser sede foi a chamada Missão de Nossa Senhora das Neves 
+            do Say, aldeia indígena fundada por padres <br>franciscanos em 1697. A instalação deu-se em 2 de junho de 1722, 
+            em solenidade presidida pelo coronel Pedro Barbosa Leal, na qualidade de representante do <br>Vice-Rei e do 
+            Governador da Província, Vasco Fernandes César. Por estar situada em lugar distante das minas, a sede da 
+            vila foi mudada, em 15 de fevereiro de <br>1724, da Missão do Say (atualmente pertencente ao município de Senhor
+            do Bonfim) para a Missão do Bom Jesus da Glória, outra aldeia de índios, fundada <br>em 1706 também por 
+            missionários franciscanos, que tentaram promover a catequese dos paiaiás. Nesse local, edificaram-se a 
+            Igreja e o Convento de Bom Jesus da Glória.</p>
+        <p>A vila de Jacobina estendia-se por cerca de 300 léguas, em terras de propriedade da Casa da Ponte, dos 
+            Guedes de Brito, abrangendo desde o Rio de Contas e indo <br>até os limites de Sergipe, incluindo a Cachoeira 
+            de Paulo Afonso. As terras onde se encontra atualmente a cidade pertenceram a Antônio Guedes de Brito, 
+            Antônio da <br>Silva Pimentel, João Peixoto Veigas e Romão Gramacho Falcão. Em 1837, pela Lei Provincial n.49, 
+            de 15 de março, o território do munícipio foi acrescido das terras<br> de Mundo Novo, atribuindo-se a José 
+            Carlos da Mota o seu primeiro contato com elas. A partir de 1848, a notícia da descoberta de diamantes 
+            na Chapada Diamantina, <br>determinou o êxodo de grande número de mineiros, sempre ávidos por novas aventuras. 
+            Seguiu-se então prolongada fase de paradeiro, que provocou o declínio <br>das atividades locais, causa da demora 
+            para a elevação da vila à categoria de cidade, o que só ocorreu em 1880, pela Lei Provincial 2.049, de 28 
+            de julho, valendo-lhe <br>o título de Agrícola Cidade de Santo Antônio de Jacobina. Sua instalação ocorreu a 11 
+            de janeiro de 1893, no governo de Joaquim Manoel Rodrigues Lima. </p>
+            <h2>Significado do Nome</h2>
+            <p>Da linguagem indígena “Campo vasto”, Jacobina se abre em meio a grandes paredões, serras auríferas e 
+                grutas, em meio às águas límpidas dos lagos, rios e variadas cachoeiras. </p>
+        
+        <p class="card-text"><small class="text-muted">Fonte: Jacobina.ba </small></p>
+        <br>
+        </section>
+</section>
+
+    <footer class=" text-center text-center text-white" style="background-color: #141414;">
+      <div class="container p-4">
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-floating m-1" href="https://www.facebook.com/gabriel.bareto.94/?locale=pt_BR" role="button"
+            ><img class="icon" src="./img/icon/facebook.png" alt="facebook"></a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-floating m-1" href="https://twitter.com/Gabriel_rmoa" role="button"
+            ><img class="icon" src="./img/icon/twitter.png" alt="Twitter"></a>
+    
+          <!-- Google -->
+          <a class="btn btn-floating m-1" href="mailto:barretog761@gmail.com" role="button" 
+            ><img class="icon" src="./img/icon/google.png" alt="Google"></a>
+    
+          <!-- Instagram -->
+          <a class="btn btn-floating m-1" href="https://www.instagram.com/gabrielloliveira02/" role="button"
+            ><img class="icon" src="./img/icon/instagram.png" alt="Instagram"></a>
+          </a>
+    
+          <!-- Linkedin -->
+          <a class="btn btn-floating m-1" href="https://www.linkedin.com/in/gabriel-oliveira-99b546258/" role="button"
+            ><img class="icon" src="./img/icon/linkedin.png" alt="Linkedin"></a>
+    
+          <!-- Github -->
+          <a class="btn btn-floating m-1" href="https://github.com/GabrielOliveiraBR" role="button"
+            ><img class="icon" src="./img/icon/github.png" alt="Github"></a>
+
+        <section class="mb-4">
+          <p>
+          </br>
+            Esse site é um exemplo para utilizar meus conhecimentos na área de Web. <br>
+            Nesse site foram utilizados as seguintes teorias: API, HTML, CSS , Javascript, Bootstrap, Jquerry e JSON
+          </p>
+        </section>
+        <div class="row">
+
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+           
+    
+          </div>
+        </div>
+      </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://github.com/GabrielOliveiraBR">Gabriel Oliveira</a>
+    </div>    
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

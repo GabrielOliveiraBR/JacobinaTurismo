@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.html{
+    font-family: 'Roboto', sans-serif;
+}
+section{
+    background-color: #141414;
+}
+.central{
+    border: 20px solid #141414;
+}
+nav{
+    z-index: 1000;
+}
+li{
+    margin: 10px;
+}
+article{
+    margin: 20px;
+    width: 300px;
+    height: 570px;
+}
+
+#map_canvas {
+    width:98vw; 
+    height:30vw;
+    
+    
+  }
+
+
+
+.card{
+    background-color: #39424b;
+    color: rgb(201, 201, 201);
+}
+.text-muted{
+    color: #575656;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+.card-img-top{
+    border: 5px solid #39424b;
+}
+  #map { height: 400px; 
+    width: 100%;
+}
+
+.nav-link mx-2 active{
+    vertical-align: middle;
+}
+@media screen and (min-width:992px){
+    .nav-item {
+    line-height:80px;
+    }
+  }
+.icon{
+    border-radius: 15px;
+    height: 40px;
+}
+
+.historia{
+    color: #ffffff;
+    text-align: center;
+    border: 30px;
+    background-color: #1f2225;
+    
+}
+.conte{
+    background-color: #1f2225;
+    text-align: center;
+    height: 300px;
+}    
+
+.contehis{
+    background-color: #5f6469;
+    color: white;
+    text-align: center;
+    
+} 
+footer, section, nav, form{
+    font-family: 'Roboto', sans-serif;
+}
